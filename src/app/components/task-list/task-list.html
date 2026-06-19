@@ -1,0 +1,43 @@
+<div class="container">
+  <header class="header">
+    <h1>📋 Task Manager AI</h1>
+    <p>Gestionnaire de tâches intelligent priorité suggérée automatiquement</p>
+  </header>
+
+  <!-- Formulaire d'ajout -->
+  <div class="form-card">
+    <input
+      type="text"
+      [(ngModel)]="newTitle"
+      placeholder="Titre de la tâche..."
+      class="input"
+    />
+    <textarea
+      [(ngModel)]="newDescription"
+      placeholder="Description (ex: urgent, deadline...)"
+      class="textarea"
+    ></textarea>
+    <app-button label="+ Ajouter" variant="primary" (clicked)="addTask()"></app-button>
+  </div>
+
+  <!-- Liste des tâches -->
+  <div class="task-list">
+    @for (task of tasks(); track task.id) {
+      <div class="task-card" [class.completed]="task.completed">
+        <div class="task-header">
+          <span class="priority priority-{{ task.priority }}">
+            {{ task.priority }}
+          </span>
+          <button (click)="deleteTask(task.id)" class="btn-delete">✕</button>
+        </div>
+        <h3>{{ task.title }}</h3>
+        <p>{{ task.description }}</p>
+        <button (click)="toggleComplete(task.id)" class="btn-toggle">
+          {{ task.completed ? '↩ Réouvrir' : '✓ Terminer' }}
+        </button>
+      </div>
+    } @empty {
+      <p class="empty">Aucune tâche pour le moment. Ajoutez-en une ! 🚀</p>
+    }
+  </div>
+</div>
