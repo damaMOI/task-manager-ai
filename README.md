@@ -1,59 +1,52 @@
-# TaskManagerIa
+# 📋 Task Manager AI
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.10.
+Gestionnaire de tâches intelligent développé avec **Angular 21** et un back-end **Node.js**, intégrant une couche d'**IA** qui suggère automatiquement la priorité de chaque tâche.
 
-## Development server
+## 🚀 Fonctionnalités
 
-To start a local development server, run:
+- ✅ Création, suppression et complétion de tâches
+- 🤖 **Suggestion automatique de priorité** (haute / moyenne / basse) par analyse du contenu
+- 🎨 Composant bouton **réutilisable** (logique Design System)
+- ⚡ Gestion d'état réactive avec les **Signals d'Angular 21**
 
+## 🛠️ Stack technique
+
+**Front-end**
+- Angular 21 · TypeScript
+- Angular Signals (`signal`, `input`, `output`)
+- Composants standalone
+
+**Back-end**
+- Node.js · Express
+- API REST (GET / POST / PUT / DELETE)
+- CORS
+
+**IA**
+- Algorithme de classification par mots-clés pour l'attribution de priorité
+
+## 🧠 Logique IA
+
+Le système analyse le titre et la description de chaque tâche pour détecter des mots-clés (urgent, deadline, optionnel...) et attribue automatiquement un niveau de priorité.
+
+## ⚙️ Installation
+
+**Front-end**
 ```bash
+cd task-manager-ia
+npm install
 ng serve
 ```
+➡️ http://localhost:4200
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
+**Back-end**
 ```bash
-ng generate component component-name
+cd task-manager-api
+npm install
+node server.js
 ```
+➡️ http://localhost:3000
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## 👩‍💻 Auteur
 
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+**Damarice MENGBA NKOA**
+Développeuse Full-Stack & IA.
